@@ -206,6 +206,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
+        $this->actionSignup();
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
