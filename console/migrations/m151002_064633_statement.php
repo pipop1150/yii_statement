@@ -62,7 +62,8 @@ class m151002_064633_statement extends Migration
         $this->dropTable('tb_statement');
         $this->dropTable('tb_user');
         $this->dropTable('ms_transaction_payment');
-
+        echo "Drop table name tb_user_group, tb_statement, tb_user, ms_transaction_payment ./n";
+        echo "Total 4 table";
     }
 
     /*
