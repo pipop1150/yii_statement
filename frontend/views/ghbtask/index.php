@@ -1,5 +1,6 @@
 <?php
 /* @var $this yii\web\View */
+var_dump($cri);
 ?>
 <h1>ghbtask/index</h1>
 

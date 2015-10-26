@@ -3,6 +3,9 @@
 namespace frontend\controllers;
 
 use Yii;
+use frontend\common\AppCommon;
+use common\models\TbCriterial;
+
 
 class TestController extends \yii\web\Controller
 {
@@ -22,6 +25,30 @@ class TestController extends \yii\web\Controller
 
 
         //return 'ddddddddddddd';
+    }
+
+    public function actionTest1(){
+
+        $model = new TbCriterial();
+        $model = TbCriterial::find()->one();
+        if($model){
+            echo $model->getAttribute('ctr_criterial');
+            //var_dump($model);
+
+        }
+
+
+
+    }
+
+    public function actionChoke(){
+        $command = AppCommon::connection('db')->createCommand('SELECT * FROM tb_criterial WHERE ctr_id = 17');
+        $post = $command->queryAll();
+        foreach($post as $dd){
+            echo $dd['ctr_criterial'];
+        }
+        //var_dump($post);
+
     }
 
 }
