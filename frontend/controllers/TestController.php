@@ -51,4 +51,23 @@ class TestController extends \yii\web\Controller
 
     }
 
+    public function actionSearch(){
+
+        Yii::$app->response->format = Response::FORMAT_JSON;
+
+        if (Yii::app()->request->isAjaxRequest && isset($_POST['term'])) {
+            $models = Model::model()->searchNames($_POST['term']);
+            $result = array();
+            foreach($models as $m){
+                $result[] = array(
+                    'name' => $m->name,
+                    'id' => $m->id,
+                );
+
+
+            }
+            echo CJSON::encode($result);
+        }
+    }
+
 }

@@ -59,7 +59,7 @@ class TbCriterial extends \yii\db\ActiveRecord
 
     public static function getTaskByPID($id){
         $sql="SELECT * FROM tb_criterial WHERE ctr_tnk_id=:id order by ctr_priority DESC";
-        return static::findBySql($sql,[":id"=>$id])->all();
+        return static::findBySql($sql,[":id"=>$id])->asArray()->all();
     }
 
 }
