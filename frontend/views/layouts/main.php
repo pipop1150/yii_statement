@@ -73,7 +73,7 @@ AppAsset::register($this);
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
-
+<input type="hidden" id="context" value="<?=$_SERVER['HTTP_HOST']?>" />
 <?php $this->endBody() ?>
 </body>
 </html>
